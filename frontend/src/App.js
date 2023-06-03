@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 function App() {
   const [data, setData] = useState("");
   const fetchData = async () => {
-    console.log("api", process.env.REACT_APP_API_URL);
-    const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/ip`);
+    // console.log("api", process.env.REACT_APP_API_URL);
+    const res = await axios.get(`/api/ip`);
     console.log(res);
     setData(res?.data);
   };
