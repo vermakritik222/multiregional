@@ -1,0 +1,15 @@
+server {
+    listen 80;
+    
+   location / {
+        root /usr/share/nginx/html;
+        index index.html;
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /api {
+        set $backend_api_url ${REACT_APP_API_URL};
+        proxy_pass $backend_api_url;
+    }
+
+}

@@ -2,8 +2,12 @@ import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+const os = require('os');
+
+
 
 function App() {
+  const hostname = os.hostname();
   const [data, setData] = useState("");
   const fetchData = async () => {
     console.log("api", process.env.REACT_APP_API_URL);
@@ -23,8 +27,8 @@ function App() {
         <div style={{ color: "green" }}>
           Status: <span style={{ fontWeight: "bolder" }}>{data?.status}</span>
         </div>
-        <div>ip: {data?.ipData?.ip}</div>
-        <div>hostname: {data?.hostname}</div>
+        <div>Backend hostname: {data?.hostname}</div>
+        <div>Frontend hostname: {hostname}</div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
