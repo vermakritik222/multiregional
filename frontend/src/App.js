@@ -8,7 +8,7 @@ function App() {
   const [data, setData] = useState("");
   const fetchData = async () => {
     // console.log("api", process.env.REACT_APP_API_URL);
-    const res = await axios.get(`http://10.0.1.5/api/ip`);
+    const res = await axios.get(`/api/ip`);
     console.log(res);
     setData(res?.data);
   };
